@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -127,7 +128,7 @@ class _HomeState extends State<Home> {
     }
     //if(text!="AC" && text!='+' && text!='-' && text!='×' && text!='÷' && text!='=')
     else {display += text; }
-    print(num1); print(num2);
+    //print(num1); print(num2);
 
 
     });
@@ -161,40 +162,50 @@ class _HomeState extends State<Home> {
                   children: [
                     Expanded(
                       flex: 2,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            child: Text(
-                              display1,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        reverse: true,
+                        children: [Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Container(
+                              child: Text(
+                                display1,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        ]
                       ),
                     ),
                     Expanded(
                       flex: 1,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            child: Text(
-                              display,
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 60,
-                                fontWeight: FontWeight.bold,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        reverse: true,
+                        children: [Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Container(
+                              child: Text(
+                                display,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 60,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
+                        ]
                       ),
                     ),
                   ],
